@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - GefestWood</title>
+    <link rel="stylesheet" href="gallery-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">GefestWood</div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#services">Послуги</a></li>
+                    <li><a href="index.html#reviews">Відгуки</a></li>
+                    <li><a href="gallery.html" class="active">Галерея</a></li>
+                    <li><a href="index.html#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-hero">
+            <div class="container">
+                <h1 class="animate-on-scroll">Наші роботи</h1>
+                <p class="animate-on-scroll">Перегляньте галерею наших найкращих проектів</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Всі проекти</button>
+                    <button class="filter-btn" data-filter="traditional">Традиційні будинки</button>
+                    <button class="filter-btn" data-filter="modern">Сучасні будинки</button>
+                    <button class="filter-btn" data-filter="premium">Преміум будинки</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-grid">
+            <div class="container">
+                <div class="gallery-items">
+                    <!-- Баня 1 -->
+                    <article class="gallery-item animate-on-scroll" data-category="traditional">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Традиційна баня з терасою" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna1" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Традиційні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Традиційна будинки з терасою</h3>
+                            <p>Площа: 450 м² • Матеріал: Карпатська ялина</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Тераса</span>
+                                <span class="gallery-tag">Басейн</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Баня 2 -->
+                    <article class="gallery-item animate-on-scroll" data-category="modern">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Сучасна баня з панорамними вікнами" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna2" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Сучасні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Сучасна будинки з панорамними вікнами</h3>
+                            <p>Площа: 600 м² </p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Панорамні вікна</span>
+                                <span class="gallery-tag">Розумний дім</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Баня 3 -->
+                    <article class="gallery-item animate-on-scroll" data-category="premium">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Преміум баня з басейном" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna3" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Преміум</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Преміум будинки з басейном</h3>
+                            <p>Площа:700 м²</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Басейн</span>
+                                <span class="gallery-tag">Хамам</span>
+                                <span class="gallery-tag">Барбекю</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Баня 4 -->
+                    <article class="gallery-item animate-on-scroll" data-category="traditional">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Компактна сімейна баня" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna4" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Традиційні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Компактна сімейна будинки</h3>
+                            <p>Площа: 240 м²</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Компактна</span>
+                                <span class="gallery-tag">Економічна</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Баня 5 -->
+                    <article class="gallery-item animate-on-scroll" data-category="modern">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Модульна баня" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna5" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Сучасні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Модульна будинки</h3>
+                            <p>Площа: 90 м² • Матеріал: Модрина</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Модульна</span>
+                                <span class="gallery-tag">Мобільна</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Додайте ще 15 бань за аналогічним шаблоном -->
+                    
+                    <!-- Баня 6 -->
+                    <article class="gallery-item animate-on-scroll" data-category="premium">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Баня-шале" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna6" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Преміум</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Будинки</h3>
+                            <p>Площа: 550 м² /p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Шале</span>
+                                <span class="gallery-tag">Камін</span>
+                                <span class="gallery-tag">Джакузі</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 7 -->
+                    <article class="gallery-item animate-on-scroll" data-category="traditional">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Баня по-чорному" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna7" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Традиційні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Будинки по-чорному</h3>
+                            <p>Площа: 300 м²</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Автентична</span>
+                                <span class="gallery-tag">Історична</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 8 -->
+                    <article class="gallery-item animate-on-scroll" data-category="modern">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Еко-баня" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna8" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Сучасні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Еко-будинки</h3>
+                            <p>Площа: 55 м²</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Екологічна</span>
+                                <span class="gallery-tag">Сонячні панелі</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 9 -->
+                    <article class="gallery-item animate-on-scroll" data-category="premium">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Спа-комплекс" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna9" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Преміум</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Спа-комплекс</h3>
+                            <p>Площа: 200 м²</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Спа</span>
+                                <span class="gallery-tag">Масажний кабінет</span>
+                                <span class="gallery-tag">Соляна кімната</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 10 -->
+                    <article class="gallery-item animate-on-scroll" data-category="traditional">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Сімейна баня з зоною барбекю" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna10" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Традиційні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Сімейна будинки з зоною барбекю</h3>
+                            <p>Площа: 70 м²</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Барбекю</span>
+                                <span class="gallery-tag">Літня кухня</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 11 -->
+                    <article class="gallery-item animate-on-scroll" data-category="modern">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Баня з панорамним дахом" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna11" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Сучасні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Будинки з панорамним дахом</h3>
+                            <p>Площа: 65 м² • Матеріал: Термодеревина</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Панорамний дах</span>
+                                <span class="gallery-tag">Зоряне небо</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 12 -->
+                    <article class="gallery-item animate-on-scroll" data-category="premium">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Баня з винним погребом" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna12" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Преміум</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>будинки з винним погребом</h3>
+                            <p>Площа: 130 м² • Матеріал: Кедр</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Винний погріб</span>
+                                <span class="gallery-tag">Дегустаційна зона</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 13 -->
+                    <article class="gallery-item animate-on-scroll" data-category="traditional">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Гірська баня" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna13" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Традиційні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Гірська будинки</h3>
+                            <p>Площа: 55 м² • Матеріал: Карпатська ялина</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Гірський стиль</span>
+                                <span class="gallery-tag">Природні матеріали</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 14 -->
+                    <article class="gallery-item animate-on-scroll" data-category="modern">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Баня з фітнес-зоною" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna14" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Сучасні</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Будинки з фітнес-зоною</h3>
+                            <p>Площа: 85 м² • Матеріал: Модрина</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Фітнес</span>
+                                <span class="gallery-tag">Тренажери</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Баня 15 -->
+                    <article class="gallery-item animate-on-scroll" data-category="premium">
+                        <div class="gallery-item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Баня з кінотеатром" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <a href="sauna-detail.html?id=sauna15" class="btn-view">Детальніше</a>
+                            </div>
+                            <div class="category-badge">Преміум</div>
+                        </div>
+                        <div class="gallery-item-info">
+                            <h3>Будинки з кінотеатром</h3>
+                            <p>Площа: 110 м² • Матеріал: Кедр</p>
+                            <div class="gallery-tags">
+                                <span class="gallery-tag">Кінотеатр</span>
+                                <span class="gallery-tag">Аудіосистема</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="follow-us">
+            <div class="container">
+                <h2 class="animate-on-scroll">Слідкуй за нами</h2>
+                <p class="animate-on-scroll">Залишайтеся на зв'язку з нами у соціальних мережах для отримання останніх новин та спеціальних пропозицій.</p>
+                <div class="social-icons animate-on-scroll">
+                    <a href="https://www.facebook.com/profile.php?id=61578574957841&locale=uk_UA" class="social-icon" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="social-tooltip">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/gefestwood/" class="social-icon" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Instagram</span>
+                    </a>
+                    <a href="#" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span class="social-tooltip">Twitter</span>
+                    </a>
+                    <a href="#" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">LinkedIn</span>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCLTn9r3xQhJv7LLKSrlJZ3g" class="social-icon" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                        <span class="social-tooltip">YouTube</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Декоративна хвиля перед футером -->
+    <div class="footer-wave"></div>
+
+    <footer>
+    <div class="container">
+        <div class="footer-column">
+            <h3>GefestWood</h3>
+            <p>Ваш надійний партнер у створенні ідеальної бані. Ми поєднуємо традиції та інновації для вашого комфорту.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61578574957841&locale=uk_UA"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/gefestwood/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCLTn9r3xQhJv7LLKSrlJZ3g"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Навігація</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="index.html#services">Послуги</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="index.html#contact">Контакти</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Послуги</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#services">Проектування модульних будинків</a></li>
+                <li><a href="index.html#services">Будівництво модульних будинків</a></li>
+                <li><a href="index.html#services">Оздоблення модульних будинків</a></li>
+                <li><a href="index.html#services">Консультації</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column footer-contact">
+            <h3>Контакти</h3>
+            <p><i class="fas fa-map-marker-alt"></i> вул. Києвське шосе, 84, м. Житомир</p>
+            <p><i class="fas fa-phone"></i> +380 (96) 059-42-42</p>
+            <p><i class="fas fa-envelope"></i> gefestwood@gmail.com</p>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 GefestWood. Усі права захищені.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
+

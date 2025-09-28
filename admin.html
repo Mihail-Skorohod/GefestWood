@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін панель - GefestWood</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Модальне вікно входу -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Вхід в адмін панель</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Логін:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="login-error" class="error-message"></div>
+                <button type="submit" class="btn btn-primary">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Адмін панель -->
+    <div id="admin-panel" style="display: none;">
+        <header class="admin-header">
+            <h1>Адмін панель GefestWood</h1>
+            <button id="logout-btn" class="btn btn-secondary">
+                <i class="fas fa-sign-out-alt"></i> Вийти
+            </button>
+        </header>
+
+        <nav class="admin-nav">
+            <button class="tab-btn active" data-tab="add-sauna">
+                <i class="fas fa-plus"></i> Додати баню
+            </button>
+            <button class="tab-btn" data-tab="manage-saunas">
+                <i class="fas fa-list"></i> Управління банями
+            </button>
+            <button class="tab-btn" data-tab="statistics">
+                <i class="fas fa-chart-bar"></i> Статистика
+            </button>
+        </nav>
+
+        <main class="admin-main">
+            <!-- Додавання бані -->
+            <div id="add-sauna" class="tab-content active">
+                <h2>Додати нову баню</h2>
+                <form id="add-sauna-form" class="sauna-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sauna-title">Назва бані *</label>
+                            <input type="text" id="sauna-title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sauna-category">Категорія *</label>
+                            <select id="sauna-category" name="category" required>
+                                <option value="">Оберіть категорію</option>
+                                <option value="traditional">Традиційні бані</option>
+                                <option value="modern">Сучасні бані</option>
+                                <option value="premium">Преміум клас</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sauna-area">Площа (м²) *</label>
+                            <input type="number" id="sauna-area" name="area" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sauna-material">Матеріал *</label>
+                            <input type="text" id="sauna-material" name="material" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sauna-build-time">Час будівництва *</label>
+                            <input type="text" id="sauna-build-time" name="buildTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sauna-capacity">Місткість *</label>
+                            <input type="text" id="sauna-capacity" name="capacity" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sauna-description">Опис *</label>
+                        <textarea id="sauna-description" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sauna-features">Особливості (кожна з нового рядка)</label>
+                        <textarea id="sauna-features" name="features" rows="6" placeholder="Парільне відділення з дерев'яними лавами&#10;Кімната відпочинку з м'якими меблями&#10;Невеликий басейн для охолодження"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sauna-images">Зображення</label>
+                        <div class="image-upload-area">
+                            <input type="file" id="sauna-images" name="images" multiple accept="image/*">
+                            <div class="upload-text">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Перетягніть зображення сюди або клікніть для вибору</p>
+                                <small>Максимум 10 зображень, будь-який розмір</small>
+                            </div>
+                        </div>
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-save"></i> Зберегти баню
+                    </button>
+                </form>
+            </div>
+
+            <!-- Управління банями -->
+            <div id="manage-saunas" class="tab-content">
+                <h2>Управління банями</h2>
+                <div class="search-bar">
+                    <input type="text" id="search-saunas" placeholder="Пошук бань...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div id="saunas-list" class="saunas-list"></div>
+            </div>
+
+            <!-- Статистика -->
+            <div id="statistics" class="tab-content">
+                <h2>Статистика</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-saunas">0</h3>
+                            <p>Всього бань</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="traditional-saunas">0</h3>
+                            <p>Традиційні</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="modern-saunas">0</h3>
+                            <p>Сучасні</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="premium-saunas">0</h3>
+                            <p>Преміум</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-section">
+                    <h3>Остання активність</h3>
+                    <div id="activity-log" class="activity-log"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальне вікно редагування -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Редагувати баню</h2>
+            <form id="edit-sauna-form" class="sauna-form">
+                <input type="hidden" id="edit-sauna-id">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-sauna-title">Назва бані *</label>
+                        <input type="text" id="edit-sauna-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-sauna-category">Категорія *</label>
+                        <select id="edit-sauna-category" required>
+                            <option value="traditional">Традиційні бані</option>
+                            <option value="modern">Сучасні бані</option>
+                            <option value="premium">Преміум клас</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-sauna-area">Площа (м²) *</label>
+                        <input type="number" id="edit-sauna-area" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-sauna-material">Матеріал *</label>
+                        <input type="text" id="edit-sauna-material" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-sauna-build-time">Час будівництва *</label>
+                        <input type="text" id="edit-sauna-build-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-sauna-capacity">Місткість *</label>
+                        <input type="text" id="edit-sauna-capacity" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-sauna-description">Опис *</label>
+                    <textarea id="edit-sauna-description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-sauna-features">Особливості</label>
+                    <textarea id="edit-sauna-features" rows="6"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Зберегти зміни
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальне вікно видалення -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h2>Підтвердження видалення</h2>
+            <p>Ви впевнені, що хочете видалити баню "<span id="delete-sauna-name"></span>"?</p>
+            <div class="modal-actions">
+                <button id="confirm-delete" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Видалити
+                </button>
+                <button class="close-modal btn btn-secondary">Скасувати</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

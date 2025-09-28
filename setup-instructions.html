@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інструкції з налаштування JSONBin - GefestWood</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .step {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Налаштування JSONBin для GefestWood</h1>
+    
+    <div class="warning">
+        <strong>⚠️ Важливо!</strong> Перед використанням потрібно налаштувати JSONBin API. Без цього синхронізація між пристроями не працюватиме.
+    </div>
+
+    <div class="step">
+        <h2>Крок 1: Реєстрація на JSONBin</h2>
+        <ol>
+            <li>Перейдіть на <a href="https://jsonbin.io" target="_blank">https://jsonbin.io</a></li>
+            <li>Натисніть "Sign Up" та зареєструйтеся</li>
+            <li>Підтвердіть email адресу</li>
+            <li>Увійдіть в акаунт</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Крок 2: Створення API ключа</h2>
+        <ol>
+            <li>В панелі управління перейдіть в розділ "API Keys"</li>
+            <li>Натисніть "Create Access Key"</li>
+            <li>Дайте назву ключу (наприклад, "GefestWood")</li>
+            <li>Скопіюйте згенерований API ключ</li>
+        </ol>
+        <div class="warning">
+            <strong>Зберігайте API ключ в безпечному місці!</strong> Він буде показаний тільки один раз.
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>Крок 3: Створення Bin</h2>
+        <ol>
+            <li>В панелі управління натисніть "Create Bin"</li>
+            <li>Вставте наступний JSON як початкові дані:</li>
+        </ol>
+        <div class="code">
+{
+  "saunas": [],
+  "lastUpdated": "2025-01-16T15:00:00.000Z"
+}
+        </div>
+        <ol start="3">
+            <li>Дайте назву Bin (наприклад, "GefestWood Saunas")</li>
+            <li>Натисніть "Create"</li>
+            <li>Скопіюйте Bin ID з URL (наприклад: 676f8a2bad19ca34f8c8e5d2)</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Крок 4: Оновлення коду</h2>
+        <p>Замініть константи в файлах <code>admin.js</code>, <code>script.js</code>, <code>gallery.js</code> та <code>sauna-detail.js</code>:</p>
+        <div class="code">
+const JSONBIN_CONFIG = {
+  API_KEY: 'ВАШ_API_КЛЮЧ_СЮДИ', // Замініть на ваш API ключ
+  BIN_ID: 'ВАШ_BIN_ID_СЮДИ',   // Замініть на ваш Bin ID
+  BASE_URL: 'https://api.jsonbin.io/v3/b'
+};
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>Крок 5: Тестування</h2>
+        <ol>
+            <li>Відкрийте адмін панель (<code>admin.html</code>)</li>
+            <li>Увійдіть в систему (admin / gefestwood2025)</li>
+            <li>Додайте нову баню</li>
+            <li>Перевірте, чи з'явилася баня на головній сторінці та в галереї</li>
+            <li>Відкрийте сайт на іншому пристрої - баня повинна бути видима</li>
+        </ol>
+    </div>
+
+    <div class="success">
+        <h3>✅ Готово!</h3>
+        <p>Тепер всі зміни в адмін панелі будуть синхронізуватися між всіма пристроями в реальному часі.</p>
+        <ul>
+            <li><strong>Автоматична синхронізація:</strong> кожні 30 секунд</li>
+            <li><strong>Fallback:</strong> якщо хмара недоступна, використовуються локальні дані</li>
+            <li><strong>Безпека:</strong> дані зберігаються в хмарі JSONBin</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>

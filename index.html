@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GefestWood - Виготовлення Модульних будинків</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+    <img src="logo.jpg" alt="GefestWood" class="logo-image">
+</div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="#home" class="active">Головна</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="#services">Послуги</a></li>
+                    <li><a href="#reviews">Відгуки</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <p class="phonr">+380 (96) 059-42-42</p>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>GefestWood</h1>
+                <p>Ваш надійний партнер для створення комфорту екологічності та стилю</p>
+                <a href="gallery.html" class="cta-button">Католог</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+              <h2>Наші послуги</h2>
+              <div class="services-grid">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                  </div>
+                  <h3>Модульні будинки із термодерева — сучасне житло для тих, хто цінує комфорт, екологічність та стиль</h3>
+                  <p>Створюємо індивідуальні проєкти будинків, враховуючи всі ваші побажання та особливості ділянки.</p>
+                  <a href="#" class="btn-service">Детальніше</a>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-hammer"></i>
+                  </div>
+                  <h3>Будівництво Модульних будинків із натуральнолі деревини</h3>
+                  <p>Професійне будівництво будинків із використанням якісних матеріалів та сучасних технологій.</p>
+                  <a href="#" class="btn-service">Детальніше</a>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-couch"></i>
+                  </div>
+                  <h3>Оздоблення та дизайн</h3>
+                  <p>Створюємо унікальний інтер'єр вашого будинку, поєднуючи комфорт та функціональність.</p>
+                  <a href="#" class="btn-service">Детальніше</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <section id="reviews">
+              <div class="container">
+                  <h2>Відгуки клієнтів</h2>
+                  <div class="reviews-container">
+                      <div class="review">
+                          <img src="images/4.jpg" alt="Фото клієнта" class="review-avatar">
+                          <h3>Іван Петренко</h3>
+                          <div class="stars">
+                              <span class="star active" data-rating="1">★</span>
+                              <span class="star active" data-rating="2">★</span>
+                              <span class="star active" data-rating="3">★</span>
+                              <span class="star active" data-rating="4">★</span>
+                              <span class="star active" data-rating="5">★</span>
+                          </div>
+                          <p>Чудова робота! Баня перевершила всі наші очікування. Якість матеріалів та виконання на найвищому рівні.</p>
+                      </div>
+                      <div class="review">
+                          <img src="Banua1.jpg" alt="Фото клієнта" class="review-avatar">
+                          <h3>Марія Коваленко</h3>
+                          <div class="stars">
+                              <span class="star active" data-rating="1">★</span>
+                              <span class="star active" data-rating="2">★</span>
+                              <span class="star active" data-rating="3">★</span>
+                              <span class="star active" data-rating="4">★</span>
+                              <span class="star" data-rating="5">★</span>
+                          </div>
+                          <p>Професійний підхід та увага до деталей. Наша нова баня - це справжній витвір мистецтва!</p>
+                      </div>
+                  </div>
+                  <div class="add-review">
+                      <h3>Залишити відгук</h3>
+                      <form id="review-form">
+                          <input type="text" id="review-name" placeholder="Ваше ім'я" required>
+                          <div class="stars">
+                              <span class="star" data-rating="1">★</span>
+                              <span class="star" data-rating="2">★</span>
+                              <span class="star" data-rating="3">★</span>
+                              <span class="star" data-rating="4">★</span>
+                              <span class="star" data-rating="5">★</span>
+                          </div>
+                          <textarea id="review-text" placeholder="Ваш відгук" required></textarea>
+                          <button type="submit">Надіслати відгук</button>
+                      </form>
+                  </div>
+              </div>
+          </section>
+
+  <section id="leave-review">
+      <div class="container">
+        <h2>Залишити відгук</h2>
+        <form id="review-form">
+          <div class="form-group">
+            <label for="review-name">Ваше ім'я</label>
+            <input type="text" id="review-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>Оцінка</label>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5" required>
+              <label for="star5" title="5 зірок"></label>
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4" title="4 зірки"></label>
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3" title="3 зірки"></label>
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2" title="2 зірки"></label>
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1" title="1 зірка"></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="review-text">Ваш відгук</label>
+            <textarea id="review-text" name="review" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Надіслати відгук</button>
+        </form>
+      </div>
+    </section> 
+
+  </main>
+
+       <footer>
+    <div class="container">
+        <div class="footer-column">
+            <h3>GefestWood</h3>
+            <p>Ваш надійний партнер у створенні ідеальної бані. Ми поєднуємо традиції та інновації для вашого комфорту.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/?locale=uk_UA"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Навігація</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="index.html#services">Послуги</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="index.html#contact">Контакти</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Послуги</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#services">Проектування модульних будинків</a></li>
+                <li><a href="index.html#services">Будівництво модульних будинків</a></li>
+                <li><a href="index.html#services">Оздоблення модульних будинків</a></li>
+                <li><a href="index.html#services">Консультації</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column footer-contact">
+            <h3>Контакти</h3>
+            <p><i class="fas fa-map-marker-alt"></i> вул. Києвське шосе, 84, м. Житомир</p>
+            <p><i class="fas fa-phone"></i> +380 (96) 059-42-42</p>
+            <p><i class="fas fa-envelope"></i> gefestwood@gmail.com</p>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 GefestWood. Усі права захищені.</p>
+        </div>
+    </div>
+</footer>
+      <script src="index.js"></script>
+      <script src="server.js"></script>
+      <script src="script.js"></script>
+</body>
+</html>
+
